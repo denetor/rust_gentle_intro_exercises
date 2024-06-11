@@ -36,7 +36,6 @@ impl Person {
 
 fn main() {
     let mut p = Person::new("John","Smith");
-
     println!("{:?}", p);
 
     p.set_first_name("Jane");

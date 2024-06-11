@@ -29,13 +29,34 @@ impl Direction {
 }
 
 
+// posso definirli anche nello stile C, i valori seguenti si incrementano di 1
+// de devo confrontarli e ordinare devo aggiungere i trait
+#[derive(PartialEq,PartialOrd)]
+enum Speed {
+    Slow = 1,
+    Medium,
+    Fast,
+}
+
+
 
 fn main() {
     let start = Direction::Left;
-
     let mut d = start;
     for _ in 0..8 {
         println!("d {}", d.as_str());
         d = d.next();
+    }
+
+    // siccome questo sono numero, posso fare il cast a u32
+    let turtle = Speed::Slow;
+    let speed = turtle as u32;
+    println!("speed {}", speed);
+
+    // ordinamento
+    let hyppo = Speed::Medium;
+    let rabbit = Speed::Fast;
+    if rabbit > hyppo {
+        println!("Rabbit is faster than hyppo");
     }
 }
